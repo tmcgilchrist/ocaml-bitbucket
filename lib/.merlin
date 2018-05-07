@@ -1,0 +1,3 @@
+B ../_build/default/lib/.bitbucket.objs
+FLG -w -40 -principal -strict-sequence -g -safe-string -w A-E-41-42-44-48 -w -27-32
+S .
