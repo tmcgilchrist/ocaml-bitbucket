@@ -14,11 +14,9 @@ For development I suggest creating an opam switch for this project.
 # Setup isolated sandbox/switch
 opam switch 4.04.2-bitbucket --alias 4.04.2
 
-# Install jbuilder
-opam install jbuilder
-
 # Install deps
-jbuilder external-lib-deps --missing @install
+opam pin add -n bitbucket .
+opam install --deps-only bitbucket -t
 
 # Actually build
 jbuilder build
