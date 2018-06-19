@@ -1,6 +1,78 @@
+type error_detail = {
+  message: string;
+  detail: string option
+}
+
 type error = {
-  resource: string;
-  ?field: string option;
-  code: string;
-  ?message: string option;
-} <ocaml field_prefix="error_">
+  error_type: string <json name="type">;
+  error_detail: error_detail <json name="error">;
+}
+
+type href = {
+  href: string
+}
+
+type account_links = {
+  hooks: href;
+  self: href;
+  repositories: href;
+  html: href;
+  followers: href;
+  avatar: href;
+  following: href;
+  snippets: href;
+}
+
+type account = {
+  username: string;
+  website: string;
+  display_name: string;
+  account_id: string;
+  links: account_links;
+  created_on: string;
+  is_staff: bool;
+  uuid: string;
+}
+
+type links = {
+  href: string;
+  name: string;
+} 
+
+type repository_links = {
+  watchers: href;
+  branches: href;
+  tags: href;
+  commits: href;
+  clone: links list;
+}
+
+type repository = {
+  scm: string;
+  website: string nullable;
+  has_wiki: bool;
+  name: string;
+  links: repository_links
+}
+
+type repositories = repository list
+
+type paginated_repositories = {
+  size: int;
+  page: int option;
+  pagelen: int;
+  values: repositories;
+}
+
+type team = {
+  name: string;
+}
+
+type teams = repository list
+
+type paginated_teams = {
+  size: int;
+  page: int option;
+  pagelen: int;
+  values: teams;
+}
