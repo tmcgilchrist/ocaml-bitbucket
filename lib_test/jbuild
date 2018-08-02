@@ -1,0 +1,11 @@
+(jbuild_version 1)
+
+(executables
+ ((libraries (cohttp-lwt-unix bitbucket_unix atdgen stringext))
+  (names
+   (users))))
+
+(alias
+ ((name DEFAULT)
+  (deps
+   (users.exe))))

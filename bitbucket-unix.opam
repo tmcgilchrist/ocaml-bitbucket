@@ -1,0 +1,27 @@
+opam-version: "1.2"
+maintainer: "timmcgil@gmail.com"
+authors: [
+  "Tim McGilchrist"
+]
+homepage:    "https://github.com/tmcgilchrist/ocaml-bitbucket"
+bug-reports: "https://github.com/tmcgilchrist/ocaml-bitbucket/issues"
+dev-repo:    "https://github.com/tmcgilchrist/ocaml-bitbucket.git"
+doc:         "https://tmcgilchrist.github.io/ocaml-bitbucket/"
+
+build: [
+  ["jbuilder" "subst"] {pinned}
+  ["jbuilder" "build" "-p" name "-j" jobs]
+]
+build-test: [
+  ["jbuilder" "runtest" "-p" name]
+]
+depends: [
+  "jbuilder" {build & >= "1.0+beta10"}
+  "github"
+  "cohttp-lwt-unix"
+  "stringext"
+  "lambda-term"
+  "cmdliner" {>= "0.9.8"}
+  "base-unix"
+]
+available: [ ocaml-version >= "4.03.0" ]
