@@ -1,22 +1,16 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "timmcgil@gmail.com"
-authors: [
-  "Tim McGilchrist"
-]
+authors: ["Tim McGilchrist"]
 homepage:    "https://github.com/tmcgilchrist/ocaml-bitbucket"
 bug-reports: "https://github.com/tmcgilchrist/ocaml-bitbucket/issues"
 dev-repo:    "https://github.com/tmcgilchrist/ocaml-bitbucket.git"
 doc:         "https://tmcgilchrist.github.io/ocaml-bitbucket/"
-
 build: [
-  ["jbuilder" "subst"] {pinned}
-  ["jbuilder" "build" "-p" name "-j" jobs]
-]
-  build-test: [
-  ["jbuilder" "runtest" "-p" name]
+  ["dune" "subst"] {pinned}
+  ["dune" "build" "-p" name "-j" jobs]
 ]
 depends: [
-  "jbuilder" {build & >= "1.0+beta10"}
+  "dune" {build }
   "uri" {>= "1.9.0"}
   "cohttp" {>= "0.99.0"}
   "cohttp-lwt" {>= "0.99"}

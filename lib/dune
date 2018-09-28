@@ -1,0 +1,26 @@
+(rule
+ (targets bitbucket_t.ml bitbucket_t.mli)
+  (deps bitbucket.atd)
+  (action  (run atdgen -t %{deps})))
+
+(rule
+ (targets bitbucket_j.ml bitbucket_j.mli)
+ (deps bitbucket.atd)
+ (action  (run atdgen -j -j-std %{deps})))
+
+(rule
+ (targets bitbucket_s.ml)
+ (deps   bitbucket_s.mli)
+ (action (copy %{deps} %{targets})))
+
+(library
+ (name bitbucket)
+ (public_name bitbucket)
+ (wrapped false)
+ ; #| 27 and 32 should be enabled once
+ ; https://github.com/janestreet/jbuilder/issues/61 is done
+ ;|#
+ (flags (:standard -principal -strict-sequence -g -safe-string
+          -w "A-E-41-42-44-48" -w "-27-32"))
+ (modules bitbucket_s bitbucket_core bitbucket_j bitbucket_t)
+ (libraries cohttp uri cohttp-lwt cohttp-lwt-unix yojson atdgen))

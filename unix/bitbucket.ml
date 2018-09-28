@@ -4,7 +4,7 @@ module Time = struct
 end
 
 module Env = struct
-  let debug = try Unix.getenv "BITBUCKET_DEBUG" <> "0" with _ -> false
+  (* let debug = try Unix.getenv "BITBUCKET_DEBUG" <> "0" with _ -> false *)
 end
 
 include Bitbucket_core.Make(Time)(Cohttp_lwt_unix.Client)
