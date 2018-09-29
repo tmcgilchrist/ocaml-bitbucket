@@ -1,8 +1,0 @@
-(jbuild_version 1)
-
-(library
- ((name bitbucket_unix)
-  (public_name bitbucket-unix)
-  (wrapped false)
-  (modules (bitbucket))
-  (libraries (lwt.unix lwt_ssl cohttp-lwt-unix bitbucket bytes))))

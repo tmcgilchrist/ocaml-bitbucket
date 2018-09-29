@@ -1,0 +1,7 @@
+#!/bin/sh -eux
+
+opam pin add -n bitbucket .
+opam install --deps-only bitbucket
+
+dune build
+dune runtest
