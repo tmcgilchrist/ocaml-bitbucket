@@ -19,10 +19,10 @@ opam pin add -n bitbucket .
 opam install --deps-only bitbucket -t
 
 # Actually build
-jbuilder build
+dune build
 
 # Running tests
-jbuilder runtest
+dune runtest
 ```
 
 Copyright and license
