@@ -1,8 +1,15 @@
 #!/bin/sh -eux
 
-opam install dune -y
-opam pin add -n bitbucket . -y
-opam install --deps-only bitbucket -y
+WORKING_DIR=$(pwd)
 
-dune build
-dune runtest
+find . -type f -name '*.opam' | while read P; do
+  cd "$(dirname "${P}")"
+  opam install dune -y
+  opam pin add -n bitbucket . -y
+  opam install --deps-only bitbucket -y
+
+  dune build
+  dune runtest
+
+  cd "${WORKING_DIR}"
+done

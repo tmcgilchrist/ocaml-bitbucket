@@ -10,7 +10,7 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
 ]
 depends: [
-  "dune" {build }
+  "dune" {build}
   "uri" {>= "1.9.0"}
   "cohttp" {>= "0.99.0"}
   "cohttp-lwt" {>= "0.99"}
