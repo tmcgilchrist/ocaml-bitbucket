@@ -2,16 +2,14 @@
 
 WORKING_DIR=$(pwd)
 
-
-find . -type f -name 'dune-project' | while read D; do
+find . -type f -name "dune-project" | while read D; do
   cd "$(dirname "${D}")"
   eval `opam config env`
   opam install dune -y
 
   find . -type f -name '*.opam' | while read P; do
     opam pin add -n  . -y
-    opam install --deps-only "${basename -s .opam ${P}"  -y
-
+    opam install --deps-only "$(basename -s .opam ${P})"  -y
   done
 
   dune build
