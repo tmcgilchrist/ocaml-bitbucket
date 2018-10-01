@@ -12,9 +12,6 @@ build: [
 depends: [
   "bitbucket"
   "lwt"
-  "lwt_ssl"
-  "cohttp"
-  "cohttp-lwt"
   "cohttp-lwt-unix"
   "stringext"
   "lambda-term"

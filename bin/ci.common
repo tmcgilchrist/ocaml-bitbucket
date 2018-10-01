@@ -8,8 +8,9 @@ find . -type f -name "dune-project" | while read D; do
   opam update
 
   find . -type f -name '*.opam' | while read P; do
-    opam pin add -n "$(basename -s .opam ${P})" . -y
+    opam pin add -n "$(basename -s .opam ${P})" . -y --dev
     opam install --deps-only "$(basename -s .opam ${P})"  -y
+    eval $(opam env)
   done
 
   dune build

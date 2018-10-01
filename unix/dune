@@ -3,4 +3,4 @@
  (public_name bitbucket-unix)
  (wrapped false)
  (modules bitbucket)
- (libraries lwt.unix lwt_ssl cohttp-lwt-unix bitbucket bytes))
+ (libraries lwt.unix cohttp-lwt-unix bitbucket bytes))
