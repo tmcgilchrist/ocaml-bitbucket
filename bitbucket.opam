@@ -1,22 +1,28 @@
 opam-version: "2.0"
 maintainer: "timmcgil@gmail.com"
 authors: ["Tim McGilchrist"]
+license: "BSD-3-clause"
 homepage:    "https://github.com/tmcgilchrist/ocaml-bitbucket"
 bug-reports: "https://github.com/tmcgilchrist/ocaml-bitbucket/issues"
-dev-repo:    "https://github.com/tmcgilchrist/ocaml-bitbucket.git"
+dev-repo:    "git+https://github.com/tmcgilchrist/ocaml-bitbucket.git"
 doc:         "https://tmcgilchrist.github.io/ocaml-bitbucket/"
 build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
 ]
 depends: [
-  "dune" {build}
-  "uri" {>= "1.9.0"}
-  "cohttp" {>= "0.99.0"}
-  "cohttp-lwt" {>= "0.99"}
-  "lwt" {>= "2.4.4"}
-  "atdgen" {>= "1.10.0"}
-  "yojson" {>= "1.2.0"}
+  "uri"
+  "cohttp"
+  "cohttp-lwt"
+  "cohttp-lwt-unix"
+  "lwt"
+  "lwt_ssl"
+  "atdgen"
+  "yojson"
   "stringext"
+  "dune" {build}
 ]
-available: [ ocaml-version >= "4.03.0" ]
+synopsis: "Bitbucket API"
+description: """
+Bitbucket API
+"""

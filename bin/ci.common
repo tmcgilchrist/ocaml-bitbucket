@@ -6,7 +6,6 @@ find . -type f -name "dune-project" | while read D; do
   cd "$(dirname "${D}")"
   eval `opam config env`
   opam update
-  opam install dune -y
 
   find . -type f -name '*.opam' | while read P; do
     opam pin add -n "$(basename -s .opam ${P})" . -y

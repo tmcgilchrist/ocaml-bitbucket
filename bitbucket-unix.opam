@@ -1,24 +1,24 @@
-opam-version: "1.2"
+opam-version: "2.0"
 maintainer: "timmcgil@gmail.com"
-authors: [
-  "Tim McGilchrist"
-]
+authors: ["Tim McGilchrist"]
 homepage:    "https://github.com/tmcgilchrist/ocaml-bitbucket"
 bug-reports: "https://github.com/tmcgilchrist/ocaml-bitbucket/issues"
-dev-repo:    "https://github.com/tmcgilchrist/ocaml-bitbucket.git"
+dev-repo:    "git://github.com/tmcgilchrist/ocaml-bitbucket.git"
 doc:         "https://tmcgilchrist.github.io/ocaml-bitbucket/"
 build: [
   ["dune" "subst"] {pinned}
   ["dune" "build" "-p" name "-j" jobs]
 ]
 depends: [
-  "dune" {build}
   "bitbucket"
+  "lwt"
   "lwt_ssl"
+  "cohttp"
+  "cohttp-lwt"
   "cohttp-lwt-unix"
   "stringext"
   "lambda-term"
-  "cmdliner" {>= "0.9.8"}
+  "cmdliner"
   "base-unix"
+  "dune" {build}
 ]
-available: [ ocaml-version >= "4.03.0" ]

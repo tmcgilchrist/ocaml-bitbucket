@@ -23,4 +23,4 @@
  (flags (:standard -principal -strict-sequence -g -safe-string
           -w "A-E-41-42-44-48" -w "-27-32"))
  (modules bitbucket_s bitbucket_core bitbucket_j bitbucket_t)
- (libraries cohttp uri cohttp-lwt cohttp-lwt-unix yojson atdgen))
+ (libraries cohttp uri cohttp-lwt lwt_ssl cohttp-lwt-unix yojson atdgen))
