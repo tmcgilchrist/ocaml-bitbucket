@@ -1,16 +1,28 @@
-version: 2
-jobs:
-  build-4.04:
-    docker:
-      - image: tmcgilchrist/ci-ocaml:ubuntu_xenial-4.04-20181001033113-0453d11
-    steps:
-      - checkout
-      - run:
-          name: Build
-          command: ./bin/ci
+# version: 2
+# jobs:
+#   build-4.04:
+#     docker:
+#       - image: tmcgilchrist/ci-ocaml:ubuntu_xenial-4.04-20181001033113-0453d11
+#     steps:
+#       - checkout
+#       - run:
+#           name: Build
+#           command: ./bin/ci
+
+# workflows:
+#   version: 2
+#   build:
+#     jobs:
+#       - build-4.04
+version: 2.1
+
+orbs:
+  ocaml: oni-tech/ocaml-build@dev:tim # use latest version
+  github: haskell-works/github-release@1.3.3
 
 workflows:
-  version: 2
   build:
     jobs:
-      - build-4.04
+      - ocaml/build-with-cci-cache:
+          name: OCaml 4.04
+          executor: ocaml/ocaml-4_04
