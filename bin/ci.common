@@ -5,7 +5,7 @@ WORKING_DIR=$(pwd)
 eval `opam config env`
 opam update
 
-find . -type f -name '*.opam' | sort | while read P; do
+find . -type f -name '*.opam' | while read P; do
   opam pin add -n "$(basename -s .opam ${P})" . -y --dev
   opam install --deps-only "$(basename -s .opam ${P})"  -y
   eval `opam config env`
