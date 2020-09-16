@@ -77,7 +77,7 @@ module Make(Time: Bitbucket_s.Time)(CL : Cohttp_lwt.S.Client) = struct
     type error =
       | Generic of (C.Response.t * string)
       | Semantic of C.Code.status_code * Bitbucket_t.error
-      | Bad_response of exn * [ `None | `Json of Yojson.Basic.json | `Raw of string ]
+      | Bad_response of exn * [ `None | `Json of Yojson.Basic.t | `Raw of string ]
     type request = {
       meth: C.Code.meth; uri: Uri.t;
       headers: C.Header.t; body: string;
