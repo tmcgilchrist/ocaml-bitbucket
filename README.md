@@ -28,3 +28,12 @@ dune runtest
 Copyright and license
 ----------
 `ocaml-bitbucket` is distributed under the terms of the Berkeley Software Distribution license (3 clauses).
+
+
+Documentation
+----------
+
+Excellent inline documentation examples:
+https://carlosdagos.github.io/osh/osh/index.html
+
+https://ocsigen.org/lwt
