@@ -19,7 +19,7 @@ This library provides an OCaml interface to the
 [Bitbucket APIv2](https://developer.atlassian.com/bitbucket/api/2/reference/) (JSON).
 This package installs the Unix (Lwt) version."""
 depends: [
-  "ocaml" {>= "4.03.0"}
+  "ocaml" {>= "4.08"}
   "dune" {>= "1.10"}
   "bitbucket" {= version}
   "cohttp" {>= "0.99.0"}

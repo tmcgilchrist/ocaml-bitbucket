@@ -1,7 +1,7 @@
 #!/bin/sh -eux
 
 WORKING_DIR=$(pwd)
-
+sudo apt-get update
 sudo apt-get install m4 pkg-config -y
 
 eval `opam config env`
@@ -9,6 +9,7 @@ opam update
 
 find . -type f -name '*.opam' | sort -d | while read P; do
   opam pin add -n "$(basename -s .opam ${P})" . -y --dev
+  opam depext -i "$(basename -s .opam ${P})"
   opam install --deps-only "$(basename -s .opam ${P})"  -y
   eval `opam config env`
 done
