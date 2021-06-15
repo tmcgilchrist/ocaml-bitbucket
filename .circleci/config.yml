@@ -8,6 +8,7 @@ jobs:
       - run:
           name: Build
           command: ./bin/ci
+
   build-4.08:
     docker:
       - image: ocaml/opam2:4.08
@@ -16,7 +17,7 @@ jobs:
       - run:
           name: Build
           command: ./bin/ci
-          
+
 workflows:
   version: 2
   build:

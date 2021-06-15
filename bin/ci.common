@@ -2,7 +2,7 @@
 
 WORKING_DIR=$(pwd)
 
-sudo apt-get install m4 -y
+sudo apt-get install m4 pkg-config -y
 
 eval `opam config env`
 opam update

@@ -13,7 +13,7 @@
 (package
  (name bitbucket)
  (depends
-  (ocaml (>= 4.03.0))
+  (ocaml (>= 4.08))
   (dune (>= 1.10))
   (uri (>= 1.9.0))
   (cohttp (>= 0.99.0))
@@ -32,7 +32,7 @@ JavaScript via [js_of_ocaml](http://ocsigen.org/js_of_ocaml)."))
 (package
  (name bitbucket-unix)
  (depends
-  (ocaml (>= 4.03.0))
+  (ocaml (>= 4.08))
   (dune (>= 1.10))
   (bitbucket (= :version))
   (cohttp (>= 0.99.0))

@@ -12,11 +12,10 @@ For development I suggest creating an opam switch for this project.
 
 ``` shell
 # Setup isolated sandbox/switch
-opam switch 4.04.2-bitbucket --alias 4.04.2
+opam switch create 4.08.1-bitbucket 4.08.1
 
 # Install deps
-opam pin add -n bitbucket .
-opam install --deps-only bitbucket -t
+opam install --deps-only . -td
 
 # Actually build
 dune build
