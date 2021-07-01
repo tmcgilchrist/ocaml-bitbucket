@@ -2,7 +2,7 @@
 
 (name bitbucket)
 
-(generate_opam_files true)
+(generate_opam_files false)
 
 (license BSD-3-clause)
 (maintainers "Tim McGilchrist <timmcgil@gmail.com>")
