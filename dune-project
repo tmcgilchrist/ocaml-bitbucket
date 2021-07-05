@@ -6,7 +6,7 @@
 
 (license BSD-3-clause)
 (maintainers "Tim McGilchrist <timmcgil@gmail.com>")
-(authors "Tim McGilchrist" )
+(authors "Tim McGilchrist <timmcgil@gmail.com>" )
 (source (github tmcgilchrist/ocaml-bitbucket))
 (documentation "https://tmcgilchrist.github.io/ocaml-bitbucket/")
 
