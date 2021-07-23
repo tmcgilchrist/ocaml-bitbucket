@@ -1,6 +1,6 @@
 (lang dune 1.10)
 
-(name bitbucket
+(name bitbucket)
 
 (generate_opam_files true)
 
@@ -13,7 +13,7 @@
 (package
  (name bitbucket)
  (depends
-  (ocaml (>= 4.08))
+  (ocaml (>= 4.15))
   (dune (>= 1.10))
   (uri (>= 1.9.0))
   (cohttp (>= 0.99.0))
