@@ -1,6 +1,6 @@
 (lang dune 1.10)
 
-(name bitbucket)
+(name bitbucket
 
 (generate_opam_files true)
 
